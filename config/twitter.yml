@@ -1,0 +1,12 @@
+###
+# Twitter API Credentials
+# https://python-twitter.readthedocs.io/en/latest/getting_started.html#getting-your-application-tokens
+###
+
+# Application Settings
+consumer_key: YourConsumerApiKey
+consumer_secret: YouConsumerSecretApiKey
+
+# Your Access Tokens
+token: YourAccessToken
+token_secret: YourAccessTokenSecret

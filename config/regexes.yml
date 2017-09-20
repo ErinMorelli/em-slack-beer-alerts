@@ -1,0 +1,40 @@
+###
+# Regular expressions for matching new beer alert tweets from a give twitter account
+#
+# Expressions will be applied iteratively, meaning that if a tweet's text matches the
+# the first expression, it will then get passed to the second expression, and so on.
+# A tweet will only be sent to Slack that matches all expressions in order.
+#
+# Positive expressions mean the tweet must match the expression.
+# Negative expressions mean the tweet must NOT match the expression.
+#
+# Format:
+#
+#  <Twitter username in all lowercase>:
+#    positive:
+#      - <first regular expression>
+#      - <second regular expression>
+#      - <third regular expression>, etc.
+#    negative:
+#      - <first regular expression>, etc.
+#
+# Here are some examples for 3 different Twitter accounts:
+###
+
+trilliumbrewing:
+  positive:
+    - "(both breweries)"
+    - "(available|bottle|limit|11am)"
+
+nightshiftbeer:
+  positive:
+    - "(https://t.co)"
+    - "(available|return|batch|limit|drop)"
+  negative:
+    - "(still|tomorrow|coming)"
+
+treehousebrewco:
+  positive:
+    - "(available|details)"
+  negative:
+    - "(running( (extremely|really))? low)"
