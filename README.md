@@ -20,7 +20,9 @@ Send new beer alerts to your [Slack](#disclaimer) channel based on tweets from y
 
 4. Add the Twitter accounts and regular expressions that match the types of tweets you want to track to the `config/regexes.yml` file. Find more information on how to do this in the comments of that file.
 
-5. Add the EM Slack Beer Alerts application to your Slack team. Use [this link](https://slack.com/oauth/authorize?&client_id=2758921438.245231164533&scope=incoming-webhook).
+5. Add the EM Slack Beer Alerts application to your Slack workspace using this link:
+
+    https://hooks.erinmorelli.com/slack/beer-alerts/
 
 6. Configure an [IFTTT](https://ifttt.com) applet to trigger this script based on tweets. For example, here is how I have configured mine:
 
