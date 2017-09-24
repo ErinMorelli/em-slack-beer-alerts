@@ -16,7 +16,7 @@ Send new beer alerts to your [Slack](#disclaimer) channel based on tweets from y
     pip install -r requirements.txt
     ```
 
-3. Add your Twitter API credentials to the `config/twitter.yml` file. Find instructions on how to get your credentials [here](https://python-twitter.readthedocs.io/en/latest/getting_started.html#getting-your-application-tokens).
+3. Rename the `config/sample_twitter.yml` file to `config/twitter.yml` and add your own Twitter API credentials. Find instructions on how to get your credentials [here](https://python-twitter.readthedocs.io/en/latest/getting_started.html#getting-your-application-tokens).
 
 4. Add the Twitter accounts and regular expressions that match the types of tweets you want to track to the `config/regexes.yml` file. Find more information on how to do this in the comments of that file.
 
