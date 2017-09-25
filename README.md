@@ -37,7 +37,18 @@ Send new beer alerts to your [Slack](#disclaimer) channel based on tweets from y
     * **URL:** "http://path/to/your/webserver/beer_alerts.py"
     * **Method:** "POST"
     * **Content Type:** "application/json"
-    * **Body:** `{ "tweet_url": {{LinkToTweet}}, "user": {{UserName}}, "webhook_url": "https://hooks.slack.com/services/your/slack/webhook" }`
+    * **Body:**
+
+        ```
+        {
+            tweet_url": {{LinkToTweet}},
+            "user": {{UserName}},
+            "webhook_urls": [
+                "https://hooks.slack.com/services/your/slack/webhook_one",
+                "https://hooks.slack.com/services/your/slack/webhook_two"
+            ]
+        }
+        ```
 
 
 ## Disclaimers

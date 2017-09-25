@@ -243,23 +243,29 @@ class EmSlackBeerAlert(object):
             dict: HTTP response data from webhook request.
 
         """
+        responses = []
+
+        # Get alert content
         slack_data = self._get_alert_content()
 
-        # Make POST request to Slack webhook
-        response = requests.post(
-            self.args['webhook_url'],
-            data=json.dumps(slack_data),
-            headers={'Content-Type': 'application/json'}
-        )
+        # Iterate over webhook URLs
+        for webhook_url in self.args['webhook_urls']:
 
-        # Check for valid response
-        response.raise_for_status()
+            # Make POST request to Slack webhook
+            response = requests.post(
+                webhook_url,
+                data=json.dumps(slack_data),
+                headers={'Content-Type': 'application/json'}
+            )
 
-        # Return JSON response
-        return {
-            "status_code": response.status_code,
-            "reason": response.reason
-        }
+            # Return JSON response
+            responses.append({
+                "status_code": response.status_code,
+                "reason": response.reason
+            })
+
+        # Return responses
+        return responses
 
 
 # Run the script from the command-line
@@ -270,10 +276,10 @@ if __name__ == '__main__':
         print("Status:405\r\nContent-type:application/json\r\n")
 
         # Send JSON body response
-        print(json.dumps({
+        print(json.dumps([{
             "status_code": 405,
             "reason": "Method Not Allowed"
-        }))
+        }]))
 
         # Exit program
         sys.exit()
@@ -283,7 +289,7 @@ if __name__ == '__main__':
 
     # Set response headers
     print("{status}\r\nContent-type:application/json\r\n".format(
-        status="Status: {code}".format(code=__response__['status_code'])
+        status="Status: {code}".format(code=200)
     ))
 
     # Send JSON body response
