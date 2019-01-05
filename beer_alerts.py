@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-Copyright (c) 2017 Erin Morelli.
+Copyright (c) 2017-2019, Erin Morelli.
 
 Title       : EM Slack Beer Alerts
 Author      : Erin Morelli
@@ -260,8 +260,8 @@ class EmSlackBeerAlert(object):
 
             # Return JSON response
             responses.append({
-                "status_code": response.status_code,
-                "reason": response.reason
+                "status_code": response.result().status_code,
+                "reason": response.result().reason
             })
 
         # Return responses
