@@ -2,6 +2,10 @@
 
 Send new beer alerts to your [Slack](#disclaimer) channel based on tweets from your favorite breweries.
 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ErinMorelli_em-slack-beer-alerts&metric=alert_status)](https://sonarcloud.io/dashboard?id=ErinMorelli_em-slack-beer-alerts)
+
+---
+
 ## Installation
 
 1. Download this repository to your webserver:
